@@ -88,6 +88,10 @@ check_cols_for_date_type = ["signup_date", "birthday"]
 check_cols_for_dupes = ["guid"]
 possible_values_for_account_type = ["google", "facebook", "other"]
 
+def score():
+    # scoring logic
+    return 0.15523
+
 result = DataValidation(
     data_file_path,
     check_cols_for_nan,
@@ -95,12 +99,6 @@ result = DataValidation(
     check_cols_for_dupes,
     possible_values_for_account_type,
 )
-
-
-def score():
-    # scoring logic
-    return 0.15523
-
 
 if result.valid:
     score_point = score()
